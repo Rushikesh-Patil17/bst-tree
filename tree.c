@@ -182,3 +182,33 @@ node *find_inorder_suc(tree t) {
 
     return p;
 }
+
+// inorder traversal of BST
+void inorder_traverse(tree t) {
+    if(!t)
+        return;
+
+    inorder_traverse(t->left);
+    printf("%d\n", t->data);
+    inorder_traverse(t->right);
+}
+
+// preorder traversal of BST
+void preorder_traverse(tree t) {
+    if(!t)
+        return;
+
+    printf("%d\n", t->data);
+    preorder_traverse(t->left);
+    preorder_traverse(t->right);
+}
+
+// postorder traversal of BST
+void postorder_traverse(tree t) {
+    if(!t)
+        return;
+
+    postorder_traverse(t->left);
+    postorder_traverse(t->right);
+    printf("%d\n", t->data);
+}
