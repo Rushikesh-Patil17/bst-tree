@@ -23,5 +23,12 @@ int main() {
     preorder_traverse(t);
     postorder_traverse(t);
     
+    if(search(t, 1)){
+    	printf("Found...\n");
+    }
+    else{
+    	printf("Not found...\n");
+    }
+    
     return 0;
 }
