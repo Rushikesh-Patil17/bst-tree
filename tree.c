@@ -212,3 +212,28 @@ void postorder_traverse(tree t) {
     postorder_traverse(t->right);
     printf("%d\n", t->data);
 }
+
+node *search(tree t, int d) {
+    // if tree is empty, return NULL
+    if(!t)
+        return NULL;
+
+    // try to find the node
+    else {
+        node *ptr = t;
+
+        while(ptr) {
+            // if value is less navigate to left
+            if(d < ptr->data)
+                ptr = ptr->left;
+            // else if value is greater navigate to right
+            else if(d > ptr->data)
+                ptr = ptr->right;
+            // found the element return
+            else if(d == ptr->data)
+                return ptr;
+        }
+    }
+
+    return NULL;
+}
